@@ -5,22 +5,23 @@ import sys
 LOFI_RADIO_URL = 'https://www.youtube.com/watch?v=X4VbdwhkE10'
 LOFI_RADIO_NAME = 'lofi hip hop radio 📚 beats to relax/study to'
 TITLE_ESCAPE_SEQUENCE = f'\033]0;{LOFI_RADIO_NAME}\007'
-MISSING_TOOL_MESSAGE = '{tool} not found - install with brew install {tool} (macOS) or winget install {tool} (Windows)'
+MISSING_TOOL_MESSAGE = '{} not found'
 
 arguments = [
-	'mpv',
+	'mpv.com' if sys.platform == 'win32' else 'mpv',
 	'--no-video',
+	'--volume=70',
 	'--msg-level=all=error',
 	LOFI_RADIO_URL
 ]
 
 def verify_mpv_installed():
 	if not shutil.which('mpv'):
-		print(MISSING_TOOL_MESSAGE.format(tool='mpv'))
+		print(MISSING_TOOL_MESSAGE.format('mpv'))
 		sys.exit()
 
 	if not shutil.which('yt-dlp'):
-		print(MISSING_TOOL_MESSAGE.format(tool='yt-dlp'))
+		print(MISSING_TOOL_MESSAGE.format('yt-dlp'))
 		sys.exit()
 
 def main():
