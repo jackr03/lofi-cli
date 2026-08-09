@@ -14,7 +14,8 @@ BASE_ARGS = [
 	'mpv.com' if sys.platform == 'win32' else 'mpv',
 	'--no-video',
 	'--volume=70',
-	'--msg-level=all=error',
+	'--msg-level=all=no,statusline=status',
+	'--term-status-msg=${?pause==yes:(paused)}',
 ]
 
 
