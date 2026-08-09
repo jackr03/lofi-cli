@@ -13,8 +13,24 @@ Requires [`mpv`](https://mpv.io/) and [`yt-dlp`](https://github.com/yt-dlp/yt-dl
 Then install the CLI with `pip`:
 
 ```bash
-pip install -e .
+pip install .
 ```
 
 ## Usage
-Type `lofi` in your terminal to start. Playback blocks the terminal instance - press `q` or `Cmd+C`) to quit.
+
+Type `lofi` in your terminal to start:
+
+```bash
+lofi
+```
+
+Or pass a station name to play a different stream:
+
+```bash
+lofi jazz
+lofi synthwave
+```
+
+Available stations: `lofi` (default), `jazz`, `synthwave`.
+
+While playing: `9`/`0` adjust volume, `m` mutes, `p` or `space` pauses, `q` quits.
