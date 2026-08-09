@@ -6,6 +6,7 @@ import sys
 from lofi.stations import DEFAULT_STATION, STATIONS
 
 
+CLEAR_TERMINAL_SEQUENCE = '\033[2J\033[H'
 TITLE_ESCAPE_SEQUENCE = '\033]0;{}\007'
 NOW_PLAYING_MESSAGE = 'Now playing {}...'
 MISSING_DEPENDENCY_MESSAGE = '{} not found'
@@ -46,6 +47,7 @@ def main():
 	verify_dependencies_installed()
 	station = STATIONS[args.station]
 
+	print(CLEAR_TERMINAL_SEQUENCE, end='')
 	print(TITLE_ESCAPE_SEQUENCE.format(station.title), end='')
 	print(NOW_PLAYING_MESSAGE.format(station.title))
 
