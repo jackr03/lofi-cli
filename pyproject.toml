@@ -1,11 +1,11 @@
 [project]
 name = "lofi-cli"
-version = "0.1.0"
+version = "0.1.1"
 requires-python = ">=3.9"
 dependencies = []
 
 [project.scripts]
-lofi = "main:main"
+lofi = "lofi.main:main"
 
 [build-system]
 requires = ["setuptools"]
